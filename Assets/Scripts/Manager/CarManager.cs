@@ -37,6 +37,7 @@ namespace CarGame
                 carList.Add(_carParent.GetChild(i).GetChild(0).GetComponent<CarMovementController>());
                 carList[i].transform.position = carList[i].FirstPos.position;
                 carList[i].transform.rotation = carList[i].FirstPos.rotation;
+                carList[i].transform.parent.gameObject.SetActive(false);
             }
 
         }
@@ -60,6 +61,8 @@ namespace CarGame
                 activeCar = carList[0];
                 activeCar.IsActive = true;
             }
+            activeCar.transform.parent.gameObject.SetActive(true);
+            ChangeActiveCarColor(activeCar);
             return activeCar;
         }
 
@@ -72,8 +75,12 @@ namespace CarGame
                 if (carList[i].isActive())
                 {
                     carList[i].IsActive = false;
+                    carList[i].transform.parent.transform.GetChild(2).gameObject.SetActive(false);
+                    carList[i].transform.parent.transform.GetChild(1).gameObject.SetActive(false);
+                    ChangeReplayCarColor(carList[i]);
                     activeCar = carList[i + 1];
                     activeCar.IsActive = true;
+                    
                     break;
 
                 }
@@ -92,9 +99,13 @@ namespace CarGame
             }
         }
 
-        private void ChangeActiveCarColor()
+        private void ChangeActiveCarColor(CarMovementController activeCar)
         {
-
+            activeCar.GetComponent<MeshRenderer>().material = _carSettings.PlayerMaterial;
+        }
+        private void ChangeReplayCarColor(CarMovementController replayCar)
+        {
+            replayCar.GetComponent<MeshRenderer>().material = _carSettings.ReplayMaterial;
         }
     }
 }
