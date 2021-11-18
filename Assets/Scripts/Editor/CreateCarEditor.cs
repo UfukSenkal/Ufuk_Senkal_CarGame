@@ -10,15 +10,16 @@ public class CreateCarEditor : Editor
     [MenuItem("Car Game/Create Car")]
     static void CreateCar()
     {
+        GameObject cars = FindObjectOfType<CarParentBase>().gameObject;
         GameObject carPackage = Resources.Load<GameObject>("Prefabs/CarBase");
 
-        if (FindObjectOfType<CarParentBase>() == null)
+        if (cars == null)
         {
             Debug.LogError("Need to Setup Scene  --- Cars GameObject is Missing");
         }
         else
         {
-            GameObject cars = FindObjectOfType<CarParentBase>().gameObject;
+           
             Instantiate(carPackage, cars.transform);
         }
 
