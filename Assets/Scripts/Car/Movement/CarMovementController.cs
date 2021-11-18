@@ -42,9 +42,6 @@ namespace CarGame.Car.Movement {
                 default:
                     break;
             }
-
-           
-
         }
 
         private void CheckRecordPlay()
@@ -70,8 +67,11 @@ namespace CarGame.Car.Movement {
 
         public override void PlayMovement()
         {
-            _actionReplay.thisCarState = CarManager.CarState.MovingByRecord;
-            _actionReplay.PlayRecord();
+            if (!_isFinishedMove)
+            {
+                _actionReplay.thisCarState = CarManager.CarState.MovingByRecord;
+                _actionReplay.PlayRecord();
+            }
         }
 
         public override void Rotate()

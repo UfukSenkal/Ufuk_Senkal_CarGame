@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static CarGame.Car.AbstractCarBase;
 
 namespace CarGame.Car.Replay
 {
@@ -21,7 +20,6 @@ namespace CarGame.Car.Replay
             switch (thisCarState)
             {
                 case CarManager.CarState.Waiting:
-                    
                     break;
                 case CarManager.CarState.Moving:
                     break;
@@ -70,12 +68,13 @@ namespace CarGame.Car.Replay
             {
 
                 thisCarState = CarManager.CarState.Parked;
-                currentReplayIndex = 0;
+
             }
         }
 
         public void FirstPos(Transform firstTransform)
         {
+            currentReplayIndex = 0;
             transform.position = firstTransform.position;
             transform.rotation = firstTransform.rotation;
 

@@ -3,23 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinishCollider : MonoBehaviour
+namespace CarGame.Colliders
 {
-    private void OnTriggerEnter(Collider other)
+    public class FinishCollider : MonoBehaviour
     {
-        CarMovementController car = other.gameObject.GetComponent<CarMovementController>();
-        if (car.isActive())
+        private void OnTriggerEnter(Collider other)
         {
+            CarMovementController car = other.gameObject.GetComponent<CarMovementController>();
+            if (car.isActive())
+            {
 
-            car.ResetPos();
-            GameManager.Instance.CurrentGameState = GameManager.GameState.WaitingInput;
-            CarManager.Instance.carState = CarManager.CarState.Waiting;
-            CarManager.Instance.ChangeActiveCar();
+                car.ResetPos();
+                GameManager.Instance.CurrentGameState = GameManager.GameState.WaitingInput;
+                CarManager.Instance.carState = CarManager.CarState.Waiting;
+                CarManager.Instance.ChangeActiveCar();
+            }
+            else
+            {
+                car.Park();
+            }
         }
-        else
-        {
-            car.Park();
-        }
+
     }
-
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CarGame.Car.Movement
 {
-    [CreateAssetMenu(menuName = "CarGame/Car/Car Settings")]
+    [CreateAssetMenu(menuName = "CarGame/Car/Car Movement Settings")]
     public class CarMovementSettings_SO : ScriptableObject
     {
         [SerializeField] private float _carSpeed = 1f;

@@ -2,19 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace CarGame
 {
-    public enum GameState
+    public class GameManager : MonoBehaviour
     {
-        WaitingInput,
-        Started,
-        GameOver
-    }
+        public static GameManager Instance;
 
-    public static GameManager Instance;
-    public GameState CurrentGameState;
-    private void Awake()
-    {
-        Instance = this;
+        public enum GameState
+        {
+            WaitingInput,
+            Started,
+            GameOver
+        }
+
+        public GameState CurrentGameState;
+
+
+        private void Awake()
+        {
+            Instance = this;
+        }
     }
 }
