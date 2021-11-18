@@ -6,6 +6,7 @@ namespace CarGame.Car
 {
     public abstract class AbstractCarBase : MonoBehaviour, ICar
     {
+        
        
         private bool _isActive = false;
 
@@ -15,8 +16,10 @@ namespace CarGame.Car
         public bool IsActive { set => _isActive = value; }
 
         public abstract void Move();
+        public abstract void Rotate();
         public abstract void RecordPlay();
         public abstract void PlayMovement();
+        public abstract void ResetPos();
 
         /// <summary>
         /// Is moving by itself
