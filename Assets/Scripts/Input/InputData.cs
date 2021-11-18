@@ -57,5 +57,10 @@ namespace CarGame.InputSystem
             _isTouching = Mathf.Clamp(Input.GetAxis("Fire1"),-1,1);
 
         }
+
+        public void ResetInput()
+        {
+            _isTouching = 0;
+        }
     }
 }

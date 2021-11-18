@@ -13,13 +13,14 @@ namespace CarGame.InputSystem
         {
             if (GameManager.Instance.CurrentGameState == GameManager.GameState.WaitingInput)
             {
+                CarManager.Instance.GetActiveCar().IsActive = true;
                 //Time.fixedDeltaTime = 0;
                 _inputData.ProccessInput();
                 if (_inputData.IsTouching != 0)
                 {
+                    _inputData.ResetInput();
                     GameManager.Instance.CurrentGameState = GameManager.GameState.Started;
-                    
-                    CarManager.Instance.GetActiveCar().IsActive = true;
+
                 }
             }
             else
