@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carState: 0
-  _carParent: {fileID: 6644309327095321925, guid: 691351a01365bbb4aa14e820ac14dd27, type: 3}
   _carSettings: {fileID: 11400000, guid: e98d3a17982621946a8ed9c1bbdb021e, type: 2}
 --- !u!1 &308197497645330290
 GameObject:
@@ -101,8 +100,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 308197497916397003}
+  - component: {fileID: 1615429418867932264}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: ManagerPoolBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,6 +126,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1615429418867932264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308197497916397002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1f1a0bb9e45424fbabfae777cedb84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &308197497941543039
 GameObject:
   m_ObjectHideFlags: 0
