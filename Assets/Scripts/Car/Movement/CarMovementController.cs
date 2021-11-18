@@ -11,14 +11,18 @@ namespace CarGame.Car.Movement {
         [SerializeField] private CarMovementSettings_SO _carSettings;
         [SerializeField] private ActionReplay _actionReplay;
         [SerializeField] private InputData _inputData;
+        [SerializeField] private Transform startPos;
+        private bool _isFinishedMove = false;
 
-        
+        public override Transform FirstPos { get => startPos;}
 
         private void Update()
         {
             switch (GameManager.Instance.CurrentGameState)
             {
                 case GameManager.GameState.WaitingInput:
+                    ResetPos();
+                    _isFinishedMove = false;
                     break;
                 case GameManager.GameState.Started:
                     if (base.isActive())
@@ -45,7 +49,11 @@ namespace CarGame.Car.Movement {
 
         private void CheckRecordPlay()
         {
-            _actionReplay.thisCarState = CarManager.CarState.MovingByRecord;
+            if (!_isFinishedMove)
+            {
+
+                _actionReplay.thisCarState = CarManager.CarState.MovingByRecord;
+            }
         }
 
         public override void Move()
@@ -72,10 +80,11 @@ namespace CarGame.Car.Movement {
 
         public override void ResetPos()
         {
-            _actionReplay.FirstPos();
+            _actionReplay.FirstPos(FirstPos);
         }
         public void Park()
         {
+            _isFinishedMove = true;
             _actionReplay.thisCarState = CarManager.CarState.Parked;
         }
     }

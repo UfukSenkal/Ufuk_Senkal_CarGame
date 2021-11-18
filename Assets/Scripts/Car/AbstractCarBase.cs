@@ -14,6 +14,7 @@ namespace CarGame.Car
         /// Set car is moving by itself
         /// </summary>
         public bool IsActive { set => _isActive = value; }
+        public abstract Transform FirstPos { get; }
 
         public abstract void Move();
         public abstract void Rotate();

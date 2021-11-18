@@ -31,6 +31,8 @@ public class CarManager : MonoBehaviour
         for (int i = 0; i < _carParent.childCount; i++)
         {
             carList.Add(_carParent.GetChild(i).GetChild(0).GetComponent<CarMovementController>());
+            carList[i].transform.position = carList[i].FirstPos.position;
+            carList[i].transform.rotation = carList[i].FirstPos.rotation;
         }
 
     }

@@ -7,7 +7,7 @@ namespace CarGame.Car
 {
     public interface ICar
     {
-        
+        Transform FirstPos { get;}
         bool isActive();
     }
 }

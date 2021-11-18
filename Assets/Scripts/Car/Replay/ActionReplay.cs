@@ -7,18 +7,11 @@ namespace CarGame.Car.Replay
 {
     public class ActionReplay : MonoBehaviour
     {
-
-      
-
-
-        private bool isInReplayMode;
-        [SerializeField] Rigidbody _rigidbody;
+    
         private List<Vector3> actionReplayRecordPos = new List<Vector3>();
         private List<Quaternion> actionReplayRecordRotations = new List<Quaternion>();
         private int currentReplayIndex;
-        private Vector3 _lastPos = Vector3.zero;
         public int indexChangeRate;
-        private bool _isrecording = false;
 
         public CarManager.CarState thisCarState = CarManager.CarState.Waiting;
 
@@ -28,7 +21,7 @@ namespace CarGame.Car.Replay
             switch (thisCarState)
             {
                 case CarManager.CarState.Waiting:
-                    FirstPos();
+                    
                     break;
                 case CarManager.CarState.Moving:
                     break;
@@ -81,14 +74,12 @@ namespace CarGame.Car.Replay
             }
         }
 
-        public void FirstPos()
+        public void FirstPos(Transform firstTransform)
         {
-            if (actionReplayRecordPos.Count > 0)
-            {
+            transform.position = firstTransform.position;
+            transform.rotation = firstTransform.rotation;
 
-                transform.position = actionReplayRecordPos[0];
-                transform.rotation = actionReplayRecordRotations[0];
-            }
+            
         }
 
     }
