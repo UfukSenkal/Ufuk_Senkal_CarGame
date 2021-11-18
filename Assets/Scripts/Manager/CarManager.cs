@@ -20,7 +20,7 @@ namespace CarGame
         public CarState carState = CarState.Waiting;
 
 
-        [SerializeField] Transform _carParent;
+        private Transform _carParent;
         private List<CarMovementController> carList = new List<CarMovementController>();
         [SerializeField] private CarSettings_SO _carSettings;
 
@@ -32,6 +32,8 @@ namespace CarGame
 
         private void Start()
         {
+            _carParent = FindObjectOfType<CarParentBase>().transform;
+
             for (int i = 0; i < _carParent.childCount; i++)
             {
                 carList.Add(_carParent.GetChild(i).GetChild(0).GetComponent<CarMovementController>());
