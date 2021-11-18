@@ -22,7 +22,7 @@ namespace CarGame.InputSystem
             if (Input.GetMouseButton(0))
             {
                
-                if (Input.mousePosition.x < Screen.width / 2)
+                if (Input.mousePosition.x <= Screen.width / 2)
                 {
                     _isLeft = true;
                     
@@ -42,15 +42,15 @@ namespace CarGame.InputSystem
             if (Input.touchCount > 0)
             {
                 var touch = Input.GetTouch(0);
-                if (touch.position.x < Screen.width / 2)
+                if (touch.position.x <= Screen.width / 2)
                 {
                     Debug.Log("Left click");
                 }
-                else if (touch.position.x > Screen.width / 2)
+                else
                 {
                     Debug.Log("Right click");
                 }
-                _isTouching = true;
+                //_isTouching = true;
             }
           
 #endif

@@ -9,9 +9,24 @@ namespace CarGame.InputSystem
         [SerializeField] InputData _inputData;
 
 
-        private void Update()
+        private void LateUpdate()
         {
-            _inputData.ProccessInput();
+            if (GameManager.Instance.CurrentGameState == GameManager.GameState.WaitingInput)
+            {
+                //Time.fixedDeltaTime = 0;
+                _inputData.ProccessInput();
+                if (_inputData.IsTouching != 0)
+                {
+                    GameManager.Instance.CurrentGameState = GameManager.GameState.Started;
+                    
+                    CarManager.Instance.GetActiveCar().IsActive = true;
+                }
+            }
+            else
+            {
+                Time.fixedDeltaTime = 1;
+                _inputData.ProccessInput();
+            }
         }
     }
 }
