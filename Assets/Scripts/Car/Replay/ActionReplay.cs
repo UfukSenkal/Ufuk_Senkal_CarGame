@@ -59,7 +59,7 @@ namespace CarGame.Car.Replay
 
         public void PlayRecord()
         {
-            thisCarState = CarManager.CarState.MovingByRecord;
+
             int nextIndex = currentReplayIndex + indexChangeRate;
 
             if (nextIndex < actionReplayRecordPos.Count && nextIndex >= 0)

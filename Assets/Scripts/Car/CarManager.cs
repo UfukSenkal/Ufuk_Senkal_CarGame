@@ -80,7 +80,7 @@ public class CarManager : MonoBehaviour
 
     }
 
-    private void SetAllFirstPos()
+    public void SetAllFirstPos()
     {
         for (int i = 0; i < carList.Count - 1; i++)
         {

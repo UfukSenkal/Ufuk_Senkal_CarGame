@@ -70,6 +70,7 @@ namespace CarGame.Car.Movement {
 
         public override void PlayMovement()
         {
+            _actionReplay.thisCarState = CarManager.CarState.MovingByRecord;
             _actionReplay.PlayRecord();
         }
 
