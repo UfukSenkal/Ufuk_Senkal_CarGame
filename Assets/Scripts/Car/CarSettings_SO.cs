@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CarGame.Car
 {
     [CreateAssetMenu(menuName = "CarGame/Car/Car Settings")]
-    public class CarSettings_SO : MonoBehaviour
+    public class CarSettings_SO : ScriptableObject
     {
         [SerializeField] private Material _playerMaterial;
         [SerializeField] private Material _replayMaterial;
