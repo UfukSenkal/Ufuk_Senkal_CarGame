@@ -14,7 +14,6 @@ namespace CarGame.InputSystem
             if (GameManager.Instance.CurrentGameState == GameManager.GameState.WaitingInput)
             {
                 CarManager.Instance.GetActiveCar().IsActive = true;
-                //Time.fixedDeltaTime = 0;
                 _inputData.ProccessInput();
                 if (_inputData.IsTouching != 0)
                 {
@@ -25,7 +24,6 @@ namespace CarGame.InputSystem
             }
             else
             {
-                Time.fixedDeltaTime = 1;
                 _inputData.ProccessInput();
             }
         }
