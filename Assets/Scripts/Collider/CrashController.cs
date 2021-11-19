@@ -4,23 +4,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrashController : MonoBehaviour
+namespace CarGame.Colliders
 {
-    private void OnTriggerEnter(Collider other)
+    public class CrashController : MonoBehaviour
     {
-        var car = other.gameObject.GetComponent<CarMovementController>();
-        var obstacle = other.gameObject.GetComponent<ObstacleBase>();
-        if (car != null || obstacle != null)
-        {
+        // rb move ile kullan
+        //private void OnCollisionEnter(Collision collision)
+        //{
 
-           
-            GameManager.Instance.CurrentGameState = GameManager.GameState.WaitingInput;
-            CarManager.Instance.carState = CarManager.CarState.Waiting;
-            CarManager.Instance.SetAllFirstPos();
-            if (this.GetComponent<CarMovementController>().isActive())
+        //}
+
+        private void OnTriggerEnter(Collider other)
+        {
+            var car = other.gameObject.GetComponent<CarMovementController>();
+            var obstacle = other.gameObject.GetComponent<ObstacleBase>();
+
+            Debug.Log(other.name);
+            if (car != null || obstacle != null)
             {
 
-                this.GetComponent<CarMovementController>().ResetRecord();
+
+
+                if (this.GetComponent<CarMovementController>().isActive())
+                {
+                    GameManager.Instance.CurrentGameState = GameManager.GameState.WaitingInput;
+                    CarManager.Instance.carState = CarManager.CarState.Waiting;
+                    CarManager.Instance.SetAllFirstPos();
+
+                    this.GetComponent<CarMovementController>().ResetRecord();
+                }
             }
         }
     }
