@@ -13,11 +13,13 @@ namespace CarGame.Car.Movement {
         [SerializeField] private InputData _inputData;
         [SerializeField] private Transform _startPos;
         [SerializeField] private Collider _exitCollider;
+        [SerializeField] private Rigidbody _carRigidbody;
         private bool _isFinishedMove = false;
 
         public override Transform FirstPos { get => _startPos;}
 
         public override Collider ExitCollider { get => _exitCollider; }
+        public override Rigidbody CarRigidbody { get => _carRigidbody; }
 
         private void Update()
         {
@@ -58,7 +60,9 @@ namespace CarGame.Car.Movement {
 
         public override void Move()
         {
-           
+            // rb move kullan
+
+            //_carRigidbody.MovePosition( transform.position + (transform.forward * _carSettings.CarSpeed * Time.deltaTime));
             transform.Translate(transform.forward * _carSettings.CarSpeed, Space.World);
         }
 
@@ -79,6 +83,7 @@ namespace CarGame.Car.Movement {
 
         public override void Rotate()
         {
+        
             transform.Rotate(0, _inputData.IsTouching * (_inputData.IsLeft ? -_carSettings.CarRotationSpeed : _carSettings.CarRotationSpeed), 0, Space.Self);
         }
 

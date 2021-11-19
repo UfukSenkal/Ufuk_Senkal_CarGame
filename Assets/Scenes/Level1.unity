@@ -3320,6 +3320,7 @@ GameObject:
   - component: {fileID: 1053659490}
   - component: {fileID: 1053659489}
   - component: {fileID: 1053659488}
+  - component: {fileID: 1053659492}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3402,13 +3403,26 @@ RectTransform:
   m_Children:
   - {fileID: 277510233}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1053659492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053659487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed9db97a6bc5184285417104d1cb09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputText: {fileID: 277510234}
 --- !u!1 &1087704468
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,7 +4423,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1311602278
 GameObject:
@@ -7903,7 +7917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837096916451707358, guid: b56c549ef22fbe94d907bf682f6fceed, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4837096916451707358, guid: b56c549ef22fbe94d907bf682f6fceed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8017,7 +8031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6644309327095321925, guid: 691351a01365bbb4aa14e820ac14dd27, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6644309327095321925, guid: 691351a01365bbb4aa14e820ac14dd27, type: 3}
       propertyPath: m_LocalPosition.x

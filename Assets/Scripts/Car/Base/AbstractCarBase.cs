@@ -17,6 +17,7 @@ namespace CarGame.Car
         public abstract Transform FirstPos { get; }
 
         public abstract Collider ExitCollider { get; }
+        public abstract Rigidbody CarRigidbody { get; }
 
         public abstract void Move();
         public abstract void Rotate();

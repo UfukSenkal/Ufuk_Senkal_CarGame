@@ -7,6 +7,7 @@ namespace CarGame.Car
 {
     public interface ICar
     {
+        Rigidbody CarRigidbody { get; }
         Collider ExitCollider { get; }
         Transform FirstPos { get;}
         bool isActive();
