@@ -6,17 +6,10 @@ using UnityEngine;
 
 public class CreateCarEditor : Editor
 {
-    [MenuItem("Car Game/Setup Scene")]
+    //[MenuItem("Car Game/Setup Scene")]
     static void SetupScene()
     {
       
-        GameObject managers = Resources.Load<GameObject>("Prefabs/ManagerPoolBase");
-        if (FindObjectOfType<ManagerPoolBase>() == null)
-        {
-            Instantiate(managers);
-           
-        }
-
         GameObject camera = Resources.Load<GameObject>("Prefabs/MainCamera");
         if (FindObjectOfType<Camera>() == null)
         {
@@ -28,6 +21,24 @@ public class CreateCarEditor : Editor
             mainCam.orthographic = true;
             mainCam.transform.position = camera.transform.position;
             mainCam.transform.rotation = camera.transform.rotation;
+        }
+        GameObject managers = Resources.Load<GameObject>("Prefabs/ManagerPoolBase");
+        if (FindObjectOfType<ManagerPoolBase>() == null)
+        {
+            Instantiate(managers);
+           
+        }
+
+        GameObject light = Resources.Load<GameObject>("Prefabs/Directional Light");
+        if (FindObjectOfType<Light>() == null)
+        {
+            Instantiate(light);
+        }
+        else
+        {
+            Light mainLight = FindObjectOfType<Light>();
+            mainLight.type = LightType.Directional;
+            mainLight.shadows = LightShadows.None;
         }
 
         GameObject carBase = Resources.Load<GameObject>("Prefabs/CarPoolBase");
