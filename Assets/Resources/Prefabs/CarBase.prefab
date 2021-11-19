@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 7438788086949378681}
   - component: {fileID: 7438788086949378626}
   - component: {fileID: 2811445936231430575}
+  - component: {fileID: 8948782086229943982}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -622,7 +623,20 @@ MonoBehaviour:
   _carSettings: {fileID: 11400000, guid: 547f9957e1adeb840bce3b256a9e112b, type: 2}
   _actionReplay: {fileID: 7438788086949378626}
   _inputData: {fileID: 11400000, guid: 73722471be7a67a4aaaba2f02c3ebf22, type: 2}
-  startPos: {fileID: 7438788085751387738}
+  _startPos: {fileID: 7438788085751387738}
+  _exitCollider: {fileID: 7438788086222278565}
+--- !u!114 &8948782086229943982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7438788086949378682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ef8d0a9460b304e96a8a3f1ac35009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7699158329018820159
 GameObject:
   m_ObjectHideFlags: 0

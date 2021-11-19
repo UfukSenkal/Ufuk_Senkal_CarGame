@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -81,5 +82,10 @@ namespace CarGame.Car.Replay
             
         }
 
+        internal void ClearRecordList()
+        {
+            actionReplayRecordPos.Clear();
+            actionReplayRecordRotations.Clear();
+        }
     }
 }
