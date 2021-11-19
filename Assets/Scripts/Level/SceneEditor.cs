@@ -140,6 +140,6 @@ public class SceneEditor : Editor
 
         Scene newScene = EditorSceneManager.NewScene(0);
         newScene.name = "Level" + levelCount;
-        
+              
     }
 }
