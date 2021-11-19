@@ -20,6 +20,10 @@ namespace CarGame.Colliders
                     car.ResetPos();
                     GameManager.Instance.CurrentGameState = GameManager.GameState.WaitingInput;
                     CarManager.Instance.carState = CarManager.CarState.Waiting;
+                    if (CarManager.Instance.CheckLastCar(car))
+                    {
+                        LevelManager.Instance.NextLevel();
+                    }
                     CarManager.Instance.ChangeActiveCar();
                 }
                 else

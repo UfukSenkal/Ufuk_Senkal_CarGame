@@ -88,6 +88,7 @@ namespace CarGame
                 }
             }
             
+            
             SetAllFirstPos();
 
 
@@ -108,6 +109,15 @@ namespace CarGame
         private void ChangeReplayCarColor(CarMovementController replayCar)
         {
             replayCar.GetComponent<MeshRenderer>().material = _carSettings.ReplayMaterial;
+        }
+
+        public bool CheckLastCar(CarMovementController activeCar)
+        {
+            if (activeCar == carList[carList.Count - 1])
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
