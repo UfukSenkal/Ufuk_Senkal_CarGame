@@ -10,17 +10,22 @@ namespace CarGame.Colliders
         private void OnTriggerEnter(Collider other)
         {
             CarMovementController car = other.gameObject.GetComponent<CarMovementController>();
-            if (car.isActive())
+
+            if (car != null && car.ExitCollider.GetInstanceID() == this.GetComponent<Collider>().GetInstanceID())
             {
 
-                car.ResetPos();
-                GameManager.Instance.CurrentGameState = GameManager.GameState.WaitingInput;
-                CarManager.Instance.carState = CarManager.CarState.Waiting;
-                CarManager.Instance.ChangeActiveCar();
-            }
-            else
-            {
-                car.Park();
+                if (car.isActive())
+                {
+
+                    car.ResetPos();
+                    GameManager.Instance.CurrentGameState = GameManager.GameState.WaitingInput;
+                    CarManager.Instance.carState = CarManager.CarState.Waiting;
+                    CarManager.Instance.ChangeActiveCar();
+                }
+                else
+                {
+                    car.Park();
+                }
             }
         }
 

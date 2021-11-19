@@ -11,10 +11,13 @@ namespace CarGame.Car.Movement {
         [SerializeField] private CarMovementSettings_SO _carSettings;
         [SerializeField] private ActionReplay _actionReplay;
         [SerializeField] private InputData _inputData;
-        [SerializeField] private Transform startPos;
+        [SerializeField] private Transform _startPos;
+        [SerializeField] private Collider _exitCollider;
         private bool _isFinishedMove = false;
 
-        public override Transform FirstPos { get => startPos;}
+        public override Transform FirstPos { get => _startPos;}
+
+        public override Collider ExitCollider { get => _exitCollider; }
 
         private void Update()
         {
@@ -48,7 +51,7 @@ namespace CarGame.Car.Movement {
         {
             if (!_isFinishedMove)
             {
-
+                
                 _actionReplay.thisCarState = CarManager.CarState.MovingByRecord;
             }
         }
@@ -87,6 +90,11 @@ namespace CarGame.Car.Movement {
         {
             _isFinishedMove = true;
             _actionReplay.thisCarState = CarManager.CarState.Parked;
+        }
+
+        public override void ResetRecord()
+        {
+            _actionReplay.ClearRecordList();
         }
     }
 }
