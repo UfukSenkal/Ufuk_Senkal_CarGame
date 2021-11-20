@@ -36,6 +36,15 @@ namespace CarGame.Car.Movement {
                 case GameManager.GameState.Started:
                     if (base.isActive())
                     {
+                        if (!IsCarInScreen())
+                        {
+                            GameManager.Instance.CurrentGameState = GameManager.GameState.WaitingInput;
+                            CarManager.Instance.carState = CarManager.CarState.Waiting;
+                            CarManager.Instance.SetAllFirstPos();
+
+                            this.GetComponent<CarMovementController>().ResetRecord();
+                        }
+
                         Rotate();
                         Move();
                         RecordPlay();
@@ -96,6 +105,17 @@ namespace CarGame.Car.Movement {
         public override void ResetRecord()
         {
             _actionReplay.ClearRecordList();
+        }
+
+        public bool IsCarInScreen()
+        {
+            Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+            Vector3 viewPos = transform.position;
+            if ((viewPos.x < screenBounds.x  && viewPos.x > -screenBounds.x) && (viewPos.z < screenBounds.y/2 && viewPos.z > -screenBounds.y/2))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
