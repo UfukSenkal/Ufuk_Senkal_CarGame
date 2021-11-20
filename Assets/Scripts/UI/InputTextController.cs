@@ -20,4 +20,5 @@ namespace CarGame.UIData {
                 _inputText.gameObject.SetActive(false);
             }
         }
-    } }
+    } 
+}

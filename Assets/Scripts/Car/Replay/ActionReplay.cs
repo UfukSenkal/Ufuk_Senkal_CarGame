@@ -22,15 +22,10 @@ namespace CarGame.Car.Replay
 
             switch (thisCarState)
             {
-                case CarManager.CarState.Waiting:
-                    break;
-                case CarManager.CarState.Moving:
-                    break;
                 case CarManager.CarState.MovingByRecord:
                     PlayRecord();
                     break;
-                case CarManager.CarState.Parked:
-                    break;
+
                 default:
                     break;
             }
