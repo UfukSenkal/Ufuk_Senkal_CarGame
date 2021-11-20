@@ -19,11 +19,11 @@ namespace CarGame
         }
         public CarState carState = CarState.Waiting;
 
-
+        #region Variables
         private Transform _carParent;
         private List<CarMovementController> carList = new List<CarMovementController>();
         [SerializeField] private CarSettings_SO _carSettings;
-
+        #endregion
 
         private void Awake()
         {
