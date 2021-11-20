@@ -13,9 +13,19 @@ namespace CarGame
             Instance = this;
         }
 
+
         public void NextLevel()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if ((SceneManager.GetActiveScene().buildIndex + 1) != SceneManager.sceneCountInBuildSettings)
+            {
+
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                Debug.LogError("LEVELS COMPLETED!");
+                Debug.LogWarning("If you have more levels to add, please add it to build settings.");
+            }
         }
 
         public void RestartScene()
