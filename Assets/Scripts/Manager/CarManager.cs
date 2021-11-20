@@ -50,7 +50,7 @@ namespace CarGame
 
             for (int i = 0; i < carList.Count; i++)
             {
-                if (carList[i].isActive())
+                if (carList[i].IsActive)
                 {
                     activeCar = carList[i];
                     break;
@@ -74,7 +74,7 @@ namespace CarGame
 
             for (int i = 0; i < carList.Count - 1; i++)
             {
-                if (carList[i].isActive())
+                if (carList[i].IsActive)
                 {
                     carList[i].IsActive = false;
                     carList[i].transform.parent.transform.GetChild(2).gameObject.SetActive(false);

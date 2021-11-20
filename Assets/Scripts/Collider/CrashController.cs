@@ -14,13 +14,12 @@ namespace CarGame.Colliders
             var car = other.gameObject.GetComponent<CarMovementController>();
             var obstacle = other.gameObject.GetComponent<ObstacleBase>();
 
-            Debug.Log(other.name);
             if (car != null || obstacle != null)
             {
 
 
 
-                if (this.GetComponent<CarMovementController>().isActive())
+                if (this.GetComponent<CarMovementController>().IsActive)
                 {
                     GameManager.Instance.CurrentGameState = GameManager.GameState.WaitingInput;
                     CarManager.Instance.carState = CarManager.CarState.Waiting;

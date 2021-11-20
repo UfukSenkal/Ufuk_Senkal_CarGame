@@ -14,7 +14,7 @@ namespace CarGame.Colliders
             if (car != null && car.ExitCollider.GetInstanceID() == this.GetComponent<Collider>().GetInstanceID())
             {
 
-                if (car.isActive())
+                if (car.IsActive)
                 {
 
                     car.ResetPos();

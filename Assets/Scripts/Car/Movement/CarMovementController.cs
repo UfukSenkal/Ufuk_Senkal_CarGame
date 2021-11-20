@@ -34,7 +34,7 @@ namespace CarGame.Car.Movement {
                     _isFinishedMove = false;
                     break;
                 case GameManager.GameState.Started:
-                    if (base.isActive())
+                    if (base.IsActive)
                     {
                         if (!IsCarInScreen())
                         {
@@ -54,8 +54,6 @@ namespace CarGame.Car.Movement {
                     {
                         CheckRecordPlay();
                     }
-                    break;
-                case GameManager.GameState.GameOver:
                     break;
                 default:
                     break;
@@ -117,5 +115,6 @@ namespace CarGame.Car.Movement {
             }
             return false;
         }
+
     }
 }

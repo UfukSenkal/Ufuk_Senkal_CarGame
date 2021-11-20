@@ -10,6 +10,11 @@ namespace CarGame.Car
         Rigidbody CarRigidbody { get; }
         Collider ExitCollider { get; }
         Transform FirstPos { get;}
-        bool isActive();
+        bool IsActive { get; set; }
+        void Move();
+         void Rotate();
+         void RecordPlay();
+         void ResetPos();
+         void ResetRecord();
     }
 }
