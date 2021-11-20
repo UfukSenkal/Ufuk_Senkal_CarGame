@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2df45e9d8cb654bb957981bc8a740f, type: 3}
   m_Name: Level Settings
   m_EditorClassIdentifier: 
-  _levelCount: 4
+  _levelCount: 3
   _carCount: 8
-  _obstacleCount: 8
+  _obstacleCount: 4
