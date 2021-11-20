@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CarGame.Car
 {
-    public abstract class AbstractCarBase : MonoBehaviour, ICar
+    public abstract class AbstractCarBase : MonoBehaviour
     {
         
        
