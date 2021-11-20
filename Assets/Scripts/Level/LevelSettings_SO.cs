@@ -10,8 +10,11 @@ namespace CarGame.Level
     [CreateAssetMenu(menuName = "CarGame/Scene/Level Settings")]
     public class LevelSettings_SO : ScriptableObject
     {
+        [Tooltip("Which Level is this scene")]
         [SerializeField] private int _levelCount;
+        [Tooltip("How many car you will spawn")]
         [SerializeField] private int _carCount;
+        [Tooltip("How many obstacle you will spawn")]
         [SerializeField] private int _obstacleCount;
 
         public int LevelCount { get { return _levelCount; } }

@@ -9,11 +9,11 @@ namespace CarGame.Car
         
        
         private bool _isActive = false;
-
         /// <summary>
         /// Set car is moving by itself
         /// </summary>
         public bool IsActive { set => _isActive = value; }
+
         public abstract Transform FirstPos { get; }
 
         public abstract Collider ExitCollider { get; }
@@ -22,7 +22,6 @@ namespace CarGame.Car
         public abstract void Move();
         public abstract void Rotate();
         public abstract void RecordPlay();
-        public abstract void PlayMovement();
         public abstract void ResetPos();
         public abstract void ResetRecord();
 

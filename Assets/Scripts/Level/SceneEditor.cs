@@ -25,8 +25,6 @@ namespace CarGame.Level
             {
                 CreateScene(example.LevelCount);
                 SetupScene();
-                //CreateCar(example.CarCount);
-                //CreateObstacle(example.ObstacleCount);
             }
             if (GUILayout.Button("Setup Scene"))
             {

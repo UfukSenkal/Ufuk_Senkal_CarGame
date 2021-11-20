@@ -8,11 +8,6 @@ namespace CarGame.Colliders
 {
     public class CrashController : MonoBehaviour
     {
-        // rb move ile kullan
-        //private void OnCollisionEnter(Collision collision)
-        //{
-
-        //}
 
         private void OnTriggerEnter(Collider other)
         {

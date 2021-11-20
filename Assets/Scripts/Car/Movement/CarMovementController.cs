@@ -8,6 +8,8 @@ using System;
 namespace CarGame.Car.Movement {
     public class CarMovementController : AbstractCarBase
     {
+        #region Variables
+
         [SerializeField] private CarMovementSettings_SO _carSettings;
         [SerializeField] private ActionReplay _actionReplay;
         [SerializeField] private InputData _inputData;
@@ -16,10 +18,12 @@ namespace CarGame.Car.Movement {
         [SerializeField] private Rigidbody _carRigidbody;
         private bool _isFinishedMove = false;
 
-        public override Transform FirstPos { get => _startPos;}
 
+
+        public override Transform FirstPos { get => _startPos;}
         public override Collider ExitCollider { get => _exitCollider; }
         public override Rigidbody CarRigidbody { get => _carRigidbody; }
+        #endregion
 
         private void Update()
         {
@@ -60,9 +64,9 @@ namespace CarGame.Car.Movement {
 
         public override void Move()
         {
-            // rb move kullan
-
+            // rb move istediðim gibi çalýþmadý burada
             //_carRigidbody.MovePosition( transform.position + (transform.forward * _carSettings.CarSpeed * Time.deltaTime));
+
             transform.Translate(transform.forward * _carSettings.CarSpeed, Space.World);
         }
 
@@ -72,14 +76,6 @@ namespace CarGame.Car.Movement {
             _actionReplay.Record();
         }
 
-        public override void PlayMovement()
-        {
-            if (!_isFinishedMove)
-            {
-                _actionReplay.thisCarState = CarManager.CarState.MovingByRecord;
-                _actionReplay.PlayRecord();
-            }
-        }
 
         public override void Rotate()
         {

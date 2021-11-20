@@ -7,11 +7,13 @@ namespace CarGame.Car.Replay
 {
     public class ActionReplay : MonoBehaviour
     {
-    
+
+        #region Variables
         private List<Vector3> actionReplayRecordPos = new List<Vector3>();
         private List<Quaternion> actionReplayRecordRotations = new List<Quaternion>();
         private int currentReplayIndex;
         public int indexChangeRate;
+        #endregion
 
         public CarManager.CarState thisCarState = CarManager.CarState.Waiting;
 
