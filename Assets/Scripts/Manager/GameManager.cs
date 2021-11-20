@@ -20,7 +20,10 @@ namespace CarGame
 
         private void Awake()
         {
-            Instance = this;
+            if (Instance == null)
+                Instance = this;
+            else if (Instance != this)
+                Destroy(this);
         }
     }
 }

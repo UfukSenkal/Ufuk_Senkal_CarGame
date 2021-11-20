@@ -27,7 +27,10 @@ namespace CarGame
 
         private void Awake()
         {
-            Instance = this;
+            if (Instance == null)
+                Instance = this;
+            else if (Instance != this)
+                Destroy(this);
         }
 
         private void Start()
@@ -44,33 +47,32 @@ namespace CarGame
 
         }
 
-        public CarMovementController GetActiveCar()
+        public void CheckActiveCar()
         {
-            CarMovementController activeCar = new CarMovementController();
+            //Is any car active?
+            bool activeCar = false;
 
             for (int i = 0; i < carList.Count; i++)
             {
                 if (carList[i].IsActive)
                 {
-                    activeCar = carList[i];
+                    carList[i].transform.parent.gameObject.SetActive(true);
+                    ChangeActiveCarColor(carList[i]);
+                    activeCar = true;
                     break;
 
                 }
             }
 
-            if (activeCar == null)
+            if (!activeCar)
             {
-                activeCar = carList[0];
-                activeCar.IsActive = true;
+                carList[0].IsActive = true;
             }
-            activeCar.transform.parent.gameObject.SetActive(true);
-            ChangeActiveCarColor(activeCar);
-            return activeCar;
+            
         }
 
         public void ChangeActiveCar()
         {
-            CarMovementController activeCar = new CarMovementController();
 
             for (int i = 0; i < carList.Count - 1; i++)
             {
@@ -80,10 +82,9 @@ namespace CarGame
                     carList[i].transform.parent.transform.GetChild(2).gameObject.SetActive(false);
                     carList[i].transform.parent.transform.GetChild(1).gameObject.SetActive(false);
                     ChangeReplayCarColor(carList[i]);
-                    activeCar = carList[i + 1];
-                    activeCar.IsActive = true;
-                    
-                    break;
+                    carList[i + 1].IsActive = true;
+                                      
+                  break;
 
                 }
             }
