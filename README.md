@@ -6,7 +6,7 @@ Type Level number to Level Count
 
 Click Create Scene Button 
 
-Click Setup Scene Button
+Click Setup Scene Button (If anything missing)
 
 Type Car and Obstacle count
 
