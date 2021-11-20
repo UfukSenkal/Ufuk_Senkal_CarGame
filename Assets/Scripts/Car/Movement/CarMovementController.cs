@@ -60,6 +60,9 @@ namespace CarGame.Car.Movement {
             }
         }
 
+        /// <summary>
+        /// If car move hasn't finished check for record
+        /// </summary>
         private void CheckRecordPlay()
         {
             if (!_isFinishedMove)
@@ -77,6 +80,9 @@ namespace CarGame.Car.Movement {
             transform.Translate(transform.forward * _carSettings.CarSpeed, Space.World);
         }
 
+        /// <summary>
+        /// Record Car Movement
+        /// </summary>
         public override void RecordPlay()
         {
 
@@ -90,6 +96,9 @@ namespace CarGame.Car.Movement {
             transform.Rotate(0, _inputData.IsTouching * (_inputData.IsLeft ? -_carSettings.CarRotationSpeed : _carSettings.CarRotationSpeed), 0, Space.Self);
         }
 
+        /// <summary>
+        /// Take car to first pos
+        /// </summary>
         public override void ResetPos()
         {
             _actionReplay.FirstPos(FirstPos);

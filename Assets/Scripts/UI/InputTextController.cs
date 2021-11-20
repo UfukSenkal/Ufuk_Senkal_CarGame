@@ -6,6 +6,7 @@ using TMPro;
 namespace CarGame.UIData {
     public class InputTextController : MonoBehaviour
     {
+        [Tooltip("Text for user to get input")]
         [SerializeField] private TextMeshProUGUI _inputText;
 
 

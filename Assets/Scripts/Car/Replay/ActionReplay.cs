@@ -33,6 +33,10 @@ namespace CarGame.Car.Replay
 
         }
 
+        /// <summary>
+        /// Change transform of car to index at array
+        /// </summary>
+        /// <param name="index">index at position and rotation array</param>
         private void SetTransform(int index)
         {
             currentReplayIndex = index;
@@ -53,6 +57,9 @@ namespace CarGame.Car.Replay
             actionReplayRecordRotations.Add(transform.rotation);
         }
 
+        /// <summary>
+        /// Move car with record
+        /// </summary>
         public void PlayRecord()
         {
 

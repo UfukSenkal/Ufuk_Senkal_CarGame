@@ -47,6 +47,9 @@ namespace CarGame
 
         }
 
+        /// <summary>
+        /// Which car is active
+        /// </summary>
         public void CheckActiveCar()
         {
             //Is any car active?
@@ -95,6 +98,9 @@ namespace CarGame
 
         }
 
+        /// <summary>
+        /// Reset all cars to first position
+        /// </summary>
         public void SetAllFirstPos()
         {
             for (int i = 0; i < carList.Count - 1; i++)
@@ -112,6 +118,11 @@ namespace CarGame
             replayCar.GetComponent<MeshRenderer>().material = _carSettings.ReplayMaterial;
         }
 
+        /// <summary>
+        /// Check car if its last at car list 
+        /// </summary>
+        /// <param name="activeCar"></param>
+        /// <returns>If true change the scene</returns>
         public bool CheckLastCar(CarMovementController activeCar)
         {
             if (activeCar == carList[carList.Count - 1])
