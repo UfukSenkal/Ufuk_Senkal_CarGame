@@ -11,7 +11,8 @@ namespace CarGame.Colliders
         {
             CarMovementController car = other.gameObject.GetComponent<CarMovementController>();
 
-            if (car != null && car.ExitCollider.GetInstanceID() == this.GetComponent<Collider>().GetInstanceID())
+            //AI cant collide with active car's exit
+            if (car != null && car.ExitCollider == this.GetComponent<Collider>())
             {
 
                 if (car.IsActive)
