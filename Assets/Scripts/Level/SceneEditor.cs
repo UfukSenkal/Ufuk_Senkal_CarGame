@@ -77,6 +77,13 @@ namespace CarGame.Level
 
             }
 
+            GameObject canvas = Resources.Load<GameObject>("Prefabs/Canvas");
+            if (FindObjectOfType<CanvasBase>() == null)
+            {
+                Instantiate(canvas);
+
+            }
+
 
             GameObject carBase = Resources.Load<GameObject>("Prefabs/CarPoolBase");
             if (FindObjectOfType<CarParentBase>() == null)
