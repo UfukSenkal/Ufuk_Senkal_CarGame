@@ -9,11 +9,15 @@ namespace CarGame.InputSystem
         [SerializeField] InputData _inputData;
 
 
-        private void LateUpdate()
+        private void Update()
         {
+            if (GameManager.Instance == null)
+                return;
+
+
             if (GameManager.Instance.CurrentGameState == GameManager.GameState.WaitingInput)
             {
-                CarManager.Instance.GetActiveCar().IsActive = true;
+                CarManager.Instance.CheckActiveCar();
                 _inputData.ProccessInput();
                 if (_inputData.IsTouching != 0)
                 {
